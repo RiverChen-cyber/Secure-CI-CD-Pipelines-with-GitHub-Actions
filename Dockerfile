@@ -3,7 +3,7 @@ FROM alpine:latest
 RUN  apk --no-cache add openjdk11 git
 
 RUN \ 
-    git clone https://github.com/dky815/Secure-CI-CD-Pipelines-with-GitHub-Actions.git && \
+    git clone https://github.com/RiverChen-cyber/Secure-CI-CD-Pipelines-with-GitHub-Actions.git && \
     cd Secure-CI-CD-Pipelines-with-GitHub-Actions && \
     ./mvnw clean package
 
