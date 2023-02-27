@@ -21,7 +21,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    name: Build and push docker image to ghcr
     steps:
       - uses: actions/checkout@v3
 
@@ -47,7 +47,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-
+    name: Deploy container to Azure Web App
     needs: build
 
     environment:
