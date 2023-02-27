@@ -10,12 +10,9 @@
 name: Build and deploy a container to an Azure Web App
 
 env:
-  AZURE_WEBAPP_NAME: MY_WEBAPP_NAME   # set this to your application's name
+  AZURE_WEBAPP_NAME: app2727   # set this to your application's name
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 permissions:
   contents: 'read'
