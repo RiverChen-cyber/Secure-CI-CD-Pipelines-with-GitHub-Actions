@@ -14,15 +14,16 @@ env:
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 permissions:
   contents: 'read'
   packages: 'write'
 
 jobs:
-  build:
+  Build docker image:
     runs-on: ubuntu-latest
 
     steps:
@@ -48,7 +49,7 @@ jobs:
           tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
           file: ./Dockerfile
 
-  deploy:
+  Deploy image to Azure Web App:
     runs-on: ubuntu-latest
 
     needs: build
